@@ -18,7 +18,7 @@
 	border-radius: 50%;
 	padding-left: 8px;
 	padding-top: 5px;
-	background: #F2F2F2;
+	background: #E5E5E5;
 }
 
 .stress-step > .progress {
@@ -73,7 +73,7 @@
 
 .stress-step.active > .stress-circle {
 	border: 2px solid #00E500;
-	background: #F2F2F2;
+	background: #E5E5E5;
 }
 .stress-step.complete > .stress-circle {
 	background: #00E500;
