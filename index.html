@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>stress.js</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Step Progress Made Easy">
+	<meta name="keywords" content="stress, stress.js, step progress, progress bar, renhard julindra, renhard, julindra">
+	<meta name="author" content="Renhard Julindra">
+	<meta property="og:image" content="stress.js.png"/>
+	<meta property="og:title" content="stress.js"/>
+	<meta property="og:description" content="Step Progress Made Easy"/>
+
+	<link rel="shortcut icon" type="image/png" href="stress.js.ico.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="stress.min.css">
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Crafty+Girls'>
+	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Inconsolata'>
+	<style>
+	body {
+		font-family: 'Inconsolata';
+	}
+
+	h1 {
+		font-family: 'Crafty Girls', cursive;
+		font-size: 50px;
+	}
+
+	.container {
+		margin-top: 20px;
+	}
+
+	#title {
+		color: #337AB7;
+		text-decoration: none;
+	}
+
+	#github-button {
+		margin-top: 50px;
+		margin-bottom: 50px	;
+	}
+
+	.divider {
+		margin: 20px;
+	}
+
+	.sec {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+	.just-link {
+		color: #337AB7;
+	}
+
+	.demo-link {
+		margin-left: 20px;
+	}
+
+	.code {
+		margin-left: 20px;
+		margin-right: 20px;
+		font-family: "Courier New", Courier, monospace;
+	}
+
+	#footer {
+		margin-top: 100px;
+	}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-lg-offset-2" style="border: 1px solid #000000;">
+				<a href="" id="title"><h1 class="text-center"><b>stress.js</b></h1></a>
+				<p class="text-center">Step Progress Made Easy</p>
+				
+				<div id="github-button" class="text-center">
+					<a href="https://github.com/julindra/stress.js"><button class="btn btn-default">View on Github</button></a>
+					<a href="https://github.com/julindra/stress.js/archive/master.zip"><button class="btn btn-default">Download .zip</button></a>
+					<a href="https://github.com/julindra/stress.js/archive/master.tar.gz"><button class="btn btn-default">Download .tar.gz</button></a>
+				</div>
+				
+				<div id="install">
+					<h2><u>Installation</u></h2>
+
+					<div class="divider"></div>
+
+					<div class="sec">
+						<p>1. This plugin requires <a class="just-link" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and <a class="just-link" href="http://jquery.com/" target="_blank">jQuery</a>.</p>
+						<p>2. Include this on your head tag.</p>
+						<div id="init-code" class="code">
+							<pre>&lt;link rel="stylesheet" href="stress.min.css"&gt;</pre>
+						</div>
+						<p>3. Include this before the closing body tag.</p>
+						<div id="init-code" class="code">
+							<pre>&lt;script src="stress.min.js"&gt;&lt;/script&gt;</pre>
+						</div>
+					</div>
+				</div>
+
+				<div id="usage">
+					<h2><u>Usage</u></h2>
+
+					<div class="divider"></div>
+
+					<h4>Attributes</h4>
+					<div class="sec">
+						<p>stress.js have some attributes that can be used.</p>
+						<table class="table table-responsive table-hover table-bordered">
+							<thead>
+								<tr>
+									<th>Attribute</th>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>data-now</td>
+									<td>Int</td>
+									<td>The index of step that currently running</td>
+								</tr>
+								<tr>
+									<td>data-status</td>
+									<td>Enum ("active", "complete", "fail")</td>
+									<td>The status of step that currently running</td>
+								</tr>
+								<tr>
+									<td>data-title-on-now</td>
+									<td>String</td>
+									<td>Title for current step (show on hover)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="divider"></div>
+
+					<h4>Options</h4>
+					<div class="sec">
+						<p>stress.js have some options that can be defined at initialization time.</p>
+						<table class="table table-responsive table-hover table-bordered">
+							<thead>
+								<tr>
+									<th>Option</th>
+									<th>Type</th>
+									<th>Default Value</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>total</td>
+									<td>Int</td>
+									<td>2</td>
+									<td>The total of steps (currently only support 2-12)</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+					<div class="divider"></div>
+
+					<h4>Methods</h4>
+					<div class="sec">
+						<p>stress.js have some methods that can be used after the initialization has completed.</p>
+						<table class="table table-responsive table-hover table-bordered">
+							<thead>
+								<tr>
+									<th>Method</th>
+									<th>Parameter</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>update(key, value)</td>
+									<td>key ("now", "status", "title-on-now")<br>value (Int/String)</td>
+									<td>Update the attributes programmatically and update the stress</td>
+								</tr>
+								<tr>
+									<td>delete()</td>
+									<td>-</td>
+									<td>Delete the stress</td>
+								</tr>
+								<tr>
+									<td>addTitle(index, text)</td>
+									<td>index (Int - index of step)<br>text (String)</td>
+									<td>Add title to any step (show on hover)</td>
+								</tr>
+								<tr>
+									<td>updateTitle(index, text)</td>
+									<td>index (Int - index of step)<br>text (String)</td>
+									<td>Update title of any step (show on hover)</td>
+								</tr>
+								<tr>
+									<td>deleteTitle(index)</td>
+									<td>index (Int - index of step)</td>
+									<td>Delete title of any step</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>		
+
+				<div id="demos">
+					<h2><u>Demos</u></h2>
+
+					<div class="divider"></div>					
+					
+					<h4>Zero Configuration</h4>
+					<div class="demo1"></div>
+					<a class="demo-link" href="#demo1-code" data-toggle="collapse">Show/Hide Code</a>
+					<div id="demo1-code" class="collapse code">
+						<pre>&lt;div class="demo1"&gt;&lt;/div&gt;
+&lt;script&gt;
+$('.demo1').stress();
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="divider"></div>					
+					
+					<h4>Full Configuration</h4>
+					<div class="demo2" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"></div>
+					<a class="demo-link" href="#demo2-code" data-toggle="collapse">Show/Hide Code</a>
+					<div id="demo2-code" class="collapse code">
+						<pre>&lt;div class="demo2" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"&gt;&lt;/div&gt;
+&lt;script&gt;
+$('.demo2').stress({
+	total: 5
+});
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="divider"></div>					
+					
+					<h4>Full Configuration 2</h4>
+					<div class="demo3" data-title-on-now="hmm"></div>
+					<a class="demo-link" href="#demo3-code" data-toggle="collapse">Show/Hide Code</a>
+					<div id="demo3-code" class="collapse code">
+						<pre>&lt;div class="demo3" data-title-on-now="hmm"&gt;&lt;/div&gt;
+&lt;script&gt;
+var demo3 = $('.demo3').stress({
+	total: 3
+});
+demo3.update('now', 2);
+demo3.update('status', 'complete');
+demo3.update('title-on-now', 'Yay');
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="divider"></div>					
+					
+					<h4>Full Configuration 3</h4>
+					<div class="demo4" data-now="3" data-status="fail" data-title-on-now="Bad"></div>
+					<a class="demo-link" href="#demo4-code" data-toggle="collapse">Show/Hide Code</a>
+					<div id="demo4-code" class="collapse code">
+						<pre>&lt;div class="demo3" data-now="2" data-status="complete" data-title-on-now="Yay"&gt;&lt;/div&gt;
+&lt;script&gt;
+$('.demo3').stress({
+	total: 3
+});
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="divider"></div>					
+					
+					<h4>Interactive</h4>
+					<div class="demo5" data-now="1" data-status="complete"></div>
+					<br>
+					<div class="text-center">
+						<button id="prev" class="btn btn-primary">Prev Step</button>
+						<button id="next" class="btn btn-primary">Next Step</button>
+						<button id="change-status" class="btn btn-warning">Change Status</button>
+					</div>
+					<br><br>
+					<a class="demo-link" href="#demo5-code" data-toggle="collapse">Show/Hide Code</a>
+					<div id="demo5-code" class="collapse code">
+						<pre>&lt;div class="demo5" data-now="1" data-status="complete"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class="text-center"&gt;
+	&lt;button id="prev" class="btn btn-primary"&gt;Prev Step&lt;/button&gt;
+	&lt;button id="next" class="btn btn-primary"&gt;Next Step&lt;/button&gt;
+	&lt;button id="change-status" class="btn btn-warning"&gt;Change Status&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var demo5 = $('.demo5').stress({
+	total: 8
+});
+$('#next').click(function() {
+	demo5.update('now', parseInt($('.demo5').attr('data-now'))+1);
+});
+$('#prev').click(function() {
+	demo5.update('now', parseInt($('.demo5').attr('data-now'))-1);
+});
+var arr = ['active', 'complete', 'fail'];
+$('#change-status').click(function() {
+	demo5.update('status', arr[Math.floor(Math.random() * arr.length)]);
+});
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="divider"></div>					
+					
+					<h4>Add/Delete Title</h4>
+					<div class="demo6" data-now="4" data-status="fail" data-title-on-now="Hah"></div>
+					<br>
+					<div class="text-center">
+						<button id="add-title" class="btn btn-primary">Add Title to Step 2</button>
+						<button id="delete-title" class="btn btn-primary">Delete Title at Step 2</button>
+					</div>
+					<br><br>
+					<a class="demo-link" href="#demo6-code" data-toggle="collapse">Show/Hide Code</a>
+					<div id="demo6-code" class="collapse code">
+						<pre>&lt;div class="demo6" data-now="4" data-status="fail" data-title-on-now="Hah"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class="text-center"&gt;
+	&lt;button id="add-title" class="btn btn-primary"&gt;Add Title to Step 2&lt;/button&gt;
+	&lt;button id="delete-title" class="btn btn-primary"&gt;Delete Title at Step 2&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+var demo6 = $('.demo6').stress({
+	total: 5
+});
+$('#add-title').click(function() {
+	demo6.addTitle(2, "Hello World!");
+});
+$('#delete-title').click(function() {
+	demo6.deleteTitle(2);
+});
+&lt;/script&gt;</pre>
+					</div>
+
+					<div class="divider"></div>
+
+				</div>
+
+				<div id="footer" class="text-center">
+					<a class="just-link" href="">stress.js</a> is created by <a class="just-link" href="http://renhard.net" target="_blank">Renhard Julindra</a> &copy; 2016.
+					<br><a class="just-link" href="https://github.com/julindra/stress.js/blob/master/LICENSE" target="_blank">MIT licensed</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="stress.min.js"></script>
+	<script>
+	$('.demo1').stress();
+	
+	$('.demo2').stress({
+		total: 5
+	});
+	
+	var demo3 = $('.demo3').stress({
+		total: 3
+	});
+	demo3.update('now', 2);
+	demo3.update('status', 'complete');
+	demo3.update('title-on-now', 'Yay');
+
+	$('.demo4').stress({
+		total: 3
+	});
+
+	var demo5 = $('.demo5').stress({
+		total: 8
+	});
+	$('#next').click(function() {
+		demo5.update('now', parseInt($('.demo5').attr('data-now'))+1);
+	});
+	$('#prev').click(function() {
+		demo5.update('now', parseInt($('.demo5').attr('data-now'))-1);
+	});
+	var arr = ['active', 'complete', 'fail'];
+	$('#change-status').click(function() {
+		demo5.update('status', arr[Math.floor(Math.random() * arr.length)]);
+	});
+
+	var demo6 = $('.demo6').stress({
+		total: 5
+	});
+	$('#add-title').click(function() {
+		demo6.addTitle(2, "Hello World!");
+	});
+	$('#delete-title').click(function() {
+		demo6.deleteTitle(2);
+	});
+	</script>
+</body>
+</html>
