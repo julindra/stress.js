@@ -10,7 +10,7 @@ Step Progress Made Easy
 ## Demo & Documentation
 Go to [stress.js](https://julindra.github.io/stress.js/)
 
-## LICENSE
+## License
 ````
 The MIT License (MIT)
 
