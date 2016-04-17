@@ -99,7 +99,7 @@
 					</div>
 				</div>
 
-				<div id="usage" class="table-responsive">
+				<div id="usage">
 					<h2><u>Usage</u></h2>
 
 					<div class="divider"></div>
@@ -107,32 +107,34 @@
 					<h4>Attributes</h4>
 					<div class="sec">
 						<p>stress.js have some attributes that can be used.</p>
-						<table class="table table-hover table-bordered">
-							<thead>
-								<tr>
-									<th>Attribute</th>
-									<th>Type</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>data-now</td>
-									<td>Int</td>
-									<td>The index of step that currently running</td>
-								</tr>
-								<tr>
-									<td>data-status</td>
-									<td>Enum ("active", "complete", "fail")</td>
-									<td>The status of step that currently running</td>
-								</tr>
-								<tr>
-									<td>data-title-on-now</td>
-									<td>String</td>
-									<td>Title for current step (show on hover)</td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="table-responsive">
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr>
+										<th>Attribute</th>
+										<th>Type</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>data-now</td>
+										<td>Int</td>
+										<td>The index of step that currently running</td>
+									</tr>
+									<tr>
+										<td>data-status</td>
+										<td>Enum ("active", "complete", "fail")</td>
+										<td>The status of step that currently running</td>
+									</tr>
+									<tr>
+										<td>data-title-on-now</td>
+										<td>String</td>
+										<td>Title for current step (show on hover)</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 
 					<div class="divider"></div>
@@ -140,24 +142,26 @@
 					<h4>Options</h4>
 					<div class="sec">
 						<p>stress.js have some options that can be defined at initialization time.</p>
-						<table class="table table-hover table-bordered">
-							<thead>
-								<tr>
-									<th>Option</th>
-									<th>Type</th>
-									<th>Default Value</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>total</td>
-									<td>Int</td>
-									<td>2</td>
-									<td>The total of steps (currently only support 2-12)</td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="table-responsive">
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr>
+										<th>Option</th>
+										<th>Type</th>
+										<th>Default Value</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>total</td>
+										<td>Int</td>
+										<td>2</td>
+										<td>The total of steps (currently only support 2-12)</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 
 					<div class="divider"></div>
@@ -165,42 +169,44 @@
 					<h4>Methods</h4>
 					<div class="sec">
 						<p>stress.js have some methods that can be used after the initialization has completed.</p>
-						<table class="table table-hover table-bordered">
-							<thead>
-								<tr>
-									<th>Method</th>
-									<th>Parameter</th>
-									<th>Description</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>update(key, value)</td>
-									<td>key ("now", "status", "title-on-now")<br>value (Int/String)</td>
-									<td>Update the attributes programmatically and update the stress</td>
-								</tr>
-								<tr>
-									<td>delete()</td>
-									<td>-</td>
-									<td>Delete the stress</td>
-								</tr>
-								<tr>
-									<td>addTitle(index, text)</td>
-									<td>index (Int - index of step)<br>text (String)</td>
-									<td>Add title to any step (show on hover)</td>
-								</tr>
-								<tr>
-									<td>updateTitle(index, text)</td>
-									<td>index (Int - index of step)<br>text (String)</td>
-									<td>Update title of any step (show on hover)</td>
-								</tr>
-								<tr>
-									<td>deleteTitle(index)</td>
-									<td>index (Int - index of step)</td>
-									<td>Delete title of any step</td>
-								</tr>
-							</tbody>
-						</table>
+						<div class="table-responsive">
+							<table class="table table-hover table-bordered">
+								<thead>
+									<tr>
+										<th>Method</th>
+										<th>Parameter</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>update(key, value)</td>
+										<td>key ("now", "status", "title-on-now")<br>value (Int/String)</td>
+										<td>Update the attributes programmatically and update the stress</td>
+									</tr>
+									<tr>
+										<td>delete()</td>
+										<td>-</td>
+										<td>Delete the stress</td>
+									</tr>
+									<tr>
+										<td>addTitle(index, text)</td>
+										<td>index (Int - index of step)<br>text (String)</td>
+										<td>Add title to any step (show on hover)</td>
+									</tr>
+									<tr>
+										<td>updateTitle(index, text)</td>
+										<td>index (Int - index of step)<br>text (String)</td>
+										<td>Update title of any step (show on hover)</td>
+									</tr>
+									<tr>
+										<td>deleteTitle(index)</td>
+										<td>index (Int - index of step)</td>
+										<td>Delete title of any step</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
 					</div>
 				</div>		
 
