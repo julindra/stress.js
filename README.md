@@ -1,6 +1,8 @@
 # stress.js
 Step Progress Made Easy
 
+![stress.js](https://julindra.github.io/stress.js/stress.js.png)
+
 ## Features
 * Responsive up to 12 steps
 
