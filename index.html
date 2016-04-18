@@ -87,12 +87,13 @@
 					<div class="divider"></div>
 
 					<div class="sec">
-						<p>1. This plugin requires <a class="just-link" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and <a class="just-link" href="http://jquery.com/" target="_blank">jQuery</a>.</p>
-						<p>2. Include this on your head tag.</p>
+						<p>1. Download <a class="just-link" href="https://github.com/julindra/stress.js">stress.js</a>.</p>
+						<p>2. Make sure you have included <a class="just-link" href="http://getbootstrap.com/" target="_blank">Bootstrap</a> and <a class="just-link" href="http://jquery.com/" target="_blank">jQuery</a>.</p>
+						<p>3. Include this on your head tag.</p>
 						<div id="init-code" class="code">
 							<pre>&lt;link rel="stylesheet" href="stress.min.css"&gt;</pre>
 						</div>
-						<p>3. Include this before the closing body tag.</p>
+						<p>4. Include this before the closing body tag.</p>
 						<div id="init-code" class="code">
 							<pre>&lt;script src="stress.min.js"&gt;&lt;/script&gt;</pre>
 						</div>
@@ -124,7 +125,7 @@
 									</tr>
 									<tr>
 										<td>data-status</td>
-										<td>Enum ("active", "complete", "fail")</td>
+										<td>String ("active", "complete", "fail")</td>
 										<td>The status of step that currently running</td>
 									</tr>
 									<tr>
@@ -174,7 +175,7 @@
 								<thead>
 									<tr>
 										<th>Method</th>
-										<th>Parameter</th>
+										<th>Parameters</th>
 										<th>Description</th>
 									</tr>
 								</thead>
@@ -190,14 +191,9 @@
 										<td>Delete the stress</td>
 									</tr>
 									<tr>
-										<td>addTitle(index, text)</td>
+										<td>Title(index, text)</td>
 										<td>index (Int - index of step)<br>text (String)</td>
-										<td>Add title to any step (show on hover)</td>
-									</tr>
-									<tr>
-										<td>updateTitle(index, text)</td>
-										<td>index (Int - index of step)<br>text (String)</td>
-										<td>Update title of any step (show on hover)</td>
+										<td>Add/Update title to any step (show on hover)</td>
 									</tr>
 									<tr>
 										<td>deleteTitle(index)</td>
@@ -330,7 +326,7 @@ var demo6 = $('.demo6').stress({
 	total: 5
 });
 $('#add-title').click(function() {
-	demo6.addTitle(2, "Hello World!");
+	demo6.Title(2, "Hello World!");
 });
 $('#delete-title').click(function() {
 	demo6.deleteTitle(2);
@@ -388,7 +384,7 @@ $('#delete-title').click(function() {
 		total: 5
 	});
 	$('#add-title').click(function() {
-		demo6.addTitle(2, "Hello World!");
+		demo6.Title(2, "Hello World!");
 	});
 	$('#delete-title').click(function() {
 		demo6.deleteTitle(2);
