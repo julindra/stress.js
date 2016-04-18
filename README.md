@@ -4,11 +4,14 @@ Step Progress Made Easy
 ![stress.js](https://julindra.github.io/stress.js/stress.js.png)
 
 ## Features
-* Responsive
-* Simple
+* Responsive up to 12 steps
 
-## Demo & Documentation
-Go to [stress.js](https://julindra.github.io/stress.js/)
+## Dependencies
+* jQuery
+* Bootstrap
+
+## Demos & Documentation
+Go to [https://julindra.github.io/stress.js/](https://julindra.github.io/stress.js/)
 
 ## License
 ````
