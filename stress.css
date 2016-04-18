@@ -2,123 +2,123 @@
 
 /* Insipired by alilishan(http://bootsnipp.com/snippets/featured/form-process-steps) */
 .stress-step {
-	padding: 0;
-	position: relative;
+	padding: 0 !important;
+	position: relative !important;
 }
 
 .stress-step > .stress-circle {
-	position: absolute;
-	display: block;
-	top: 25px;
-	left: 50%;
-	width: 30px;
-	height: 30px;
-	margin-top: -15px;
-	margin-left: -15px;
-	border-radius: 50%;
-	padding-left: 8px;
-	padding-top: 5px;
-	background: #E5E5E5;
+	position: absolute !important;
+	display: block !important;
+	top: 25px !important;
+	left: 50% !important;
+	width: 30px !important;
+	height: 30px !important;
+	margin-top: -15px !important;
+	margin-left: -15px !important;
+	border-radius: 50% !important;
+	padding-left: 8px !important;
+	padding-top: 5px !important;
+	background: #E5E5E5 !important;
 }
 
 .stress-step > .progress {
-	position: relative;
-	height: 8px;
-	box-shadow: none;
-	margin: 20px 0;
-	border-radius: 0;
+	position: relative !important;
+	height: 8px !important;
+	box-shadow: none !important;
+	margin: 20px 0 !important;
+	border-radius: 0 !important;
 }
 
 .stress-step:first-child > .progress {
-	left: 50%;
-	width: 50%;
+	left: 50% !important;
+	width: 50% !important;
 }
 .stress-step:last-child > .progress {
-	width: 50%;
+	width: 50% !important;
 }
 
 .stress-step > .progress > .progress-bar {
-	width: 0;
-	box-shadow: none;
-	background: #7FFF7F;
+	width: 0 !important;
+	box-shadow: none !important;
+	background: #7FFF7F !important;
 }
 
 .stress-step.complete > .progress > .progress-bar {
-	width: 100%;
+	width: 100% !important;
 }
 .stress-step.complete.not-last > .progress > .progress-bar {
-	width: 50%;
+	width: 50% !important;
 }
 .stress-step:first-child.complete.not-last > .progress > .progress-bar {
-	width: 0%;
+	width: 0% !important;
 }
 .stress-step.active > .progress > .progress-bar {
-	width: 50%;
+	width: 50% !important;
 }
 .stress-step.fail > .progress > .progress-bar {
-	width: 50%;
+	width: 50% !important;
 }
 .stress-step:first-child.active > .progress > .progress-bar {
-	width: 0%;
+	width: 0% !important;
 }
 .stress-step:last-child.active > .progress > .progress-bar {
-	width: 100%;
+	width: 100% !important;
 }
 .stress-step:first-child.fail > .progress > .progress-bar {
-	width: 0%;
+	width: 0% !important;
 }
 .stress-step:last-child.fail > .progress > .progress-bar {
-	width: 100%;
+	width: 100% !important;
 }
 
 .stress-step.active > .stress-circle {
-	border: 2px solid #00E500;
-	background: #E5E5E5;
+	border: 2px solid #00E500 !important;
+	background: #E5E5E5 !important;
 }
 .stress-step.complete > .stress-circle {
-	background: #00E500;
+	background: #00E500 !important;
 }
 .stress-step.complete > .stress-circle:before {
-	content: '\f00c';
-	font-family: FontAwesome;
-	font-size: 14px;
-	color: #FFFFFF;
-	float: left;
+	content: '\f00c' !important;
+	font-family: FontAwesome !important;
+	font-size: 14px !important;
+	color: #FFFFFF !important;
+	float: left !important;
 }
 .stress-step.fail > .stress-circle {
-	background: #FF0000;
-	padding-left: 9.7px;
-	padding-top: 4.3px;
+	background: #FF0000 !important;
+	padding-left: 9.7px !important;
+	padding-top: 4.3px !important;
 }
 .stress-step.fail > .stress-circle:before {
-	content: '\f00d';
-	font-family: FontAwesome;
-	font-size: 14px;
-	color: #FFFFFF;
-	float: left;
+	content: '\f00d' !important;
+	font-family: FontAwesome !important;
+	font-size: 14px !important;
+	color: #FFFFFF !important;
+	float: left !important;
 }
 
 .five-cols .col-xs-2 {
-	width: 20%;
-	*width: 20%;
+	width: 20% !important;
+	*width: 20% !important;
 }
 .seven-cols .col-xs-1 {
-	width: 14.2857142857142857%;
-	*width: 14.2857142857142857%;
+	width: 14.2857142857142857% !important;
+	*width: 14.2857142857142857% !important;
 }
 .eight-cols .col-xs-1 {
-	width: 12.5%;
-	*width: 12.5%; 
+	width: 12.5% !important;
+	*width: 12.5% !important; 
 }
 .nine-cols .col-xs-1 {
-	width: 11.1111111111111111%;
-	*width: 11.1111111111111111%; 
+	width: 11.1111111111111111% !important;
+	*width: 11.1111111111111111% !important; 
 }
 .ten-cols .col-xs-1 {
-	width: 10%;
-	*width: 10%; 
+	width: 10% !important;
+	*width: 10% !important; 
 }
 .eleven-cols .col-xs-1 {
-	width: 9.0909090909090909%;
-	*width: 9.0909090909090909%; 
+	width: 9.0909090909090909% !important;
+	*width: 9.0909090909090909% !important; 
 }
