@@ -69,23 +69,30 @@
 	</style>
 </head>
 <body>
-	<div class="alert alert-info navbar-fixed-top">
-		<b>Info!</b> There is a new version available! <a href="../1.0/" class="alert-link" style="cursor: pointer;">Upgrade now!</a>
-	</div>
-	<br><br>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-2" style="border: 1px solid #000000;">
-				<h3>v0.5</h3>
+				<h3>v1.0</h3>
 				<a href="" id="title"><h1 class="text-center"><b>stress.js</b></h1></a>
 				<p class="text-center">Step Progress Made Easy</p>
-				
+
 				<div id="github-button" class="text-center">
 					<a href="https://github.com/julindra/stress.js"><button class="btn btn-default">View on Github</button></a>
-					<a href="https://github.com/julindra/stress.js/archive/0.5.zip"><button class="btn btn-default">Download .zip</button></a>
-					<a href="https://github.com/julindra/stress.js/archive/0.5.tar.gz"><button class="btn btn-default">Download .tar.gz</button></a>
+					<a href="https://github.com/julindra/stress.js/archive/v1.0.zip"><button class="btn btn-default">Download .zip</button></a>
+					<a href="https://github.com/julindra/stress.js/archive/v1.0.tar.gz"><button class="btn btn-default">Download .tar.gz</button></a>
 				</div>
 				
+				<div>
+					<h2><u>WHAT'S NEW:</u></h2>
+					<ul>
+						<li>Easier to use with 0 lines jQuery initialization</li>
+						<li>HTML support on title</li>
+						<li>Support current index: 0</li>
+						<li>Smaller size of .js</li>
+						<li>Bug fixes</li>
+					</ul>
+				</div>
+
 				<div id="install">
 					<h2><u>Installation</u></h2>
 
@@ -123,6 +130,11 @@
 									</tr>
 								</thead>
 								<tbody>
+									<tr>
+										<td>data-init-stress</td>
+										<td>Int</td>
+										<td>The total of steps (currently only support 2-12)<br>* If you use this, you don't need the jQuery initialization</td>
+									</tr>
 									<tr>
 										<td>data-now</td>
 										<td>Int</td>
@@ -163,7 +175,7 @@
 										<td>total</td>
 										<td>Int</td>
 										<td>2</td>
-										<td>The total of steps (currently only support 2-12)</td>
+										<td>The total of steps (currently only support 2-12)<br>* use this if you don't use data-init-stress</td>
 									</tr>
 								</tbody>
 							</table>
@@ -217,10 +229,14 @@
 					<div class="divider"></div>					
 					
 					<h4>Zero Configuration</h4>
-					<div class="demo1"></div>
+					<div class="demo1" data-init-stress=""></div>
 					<a class="demo-link" href="#demo1-code" data-toggle="collapse">Show/Hide Code</a>
 					<div id="demo1-code" class="collapse code">
-						<pre>&lt;div class="demo1"&gt;&lt;/div&gt;
+						<pre>&lt;div class="demo1" data-init-stress=""&gt;&lt;/div&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;div class="demo1"&gt;&lt;/div&gt;
 &lt;script&gt;
 $('.demo1').stress();
 &lt;/script&gt;</pre>
@@ -229,10 +245,14 @@ $('.demo1').stress();
 					<div class="divider"></div>					
 					
 					<h4>Full Configuration</h4>
-					<div class="demo2" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"></div>
+					<div class="demo2" data-init-stress="5" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"></div>
 					<a class="demo-link" href="#demo2-code" data-toggle="collapse">Show/Hide Code</a>
 					<div id="demo2-code" class="collapse code">
-						<pre>&lt;div class="demo2" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"&gt;&lt;/div&gt;
+						<pre>&lt;div class="demo2" data-init-stress="5" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"&gt;&lt;/div&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;div class="demo2" data-now="3" data-status="active" data-title-on-now="I'm waiting for you"&gt;&lt;/div&gt;
 &lt;script&gt;
 $('.demo2').stress({
 	total: 5
@@ -243,10 +263,19 @@ $('.demo2').stress({
 					<div class="divider"></div>					
 					
 					<h4>Full Configuration 2</h4>
-					<div class="demo3" data-title-on-now="hmm"></div>
+					<div class="demo3" data-init-stress="3" data-title-on-now="hmm"></div>
 					<a class="demo-link" href="#demo3-code" data-toggle="collapse">Show/Hide Code</a>
 					<div id="demo3-code" class="collapse code">
-						<pre>&lt;div class="demo3" data-title-on-now="hmm"&gt;&lt;/div&gt;
+						<pre>&lt;div class="demo3" data-init-stress="3" data-title-on-now="hmm"&gt;&lt;/div&gt;
+&lt;script&gt;
+$('.demo3').stress().update('now', 2);
+$('.demo3').stress().update('status', 'complete');
+$('.demo3').stress().update('title-on-now', 'Yay');
+&lt;/script&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;div class="demo3" data-title-on-now="hmm"&gt;&lt;/div&gt;
 &lt;script&gt;
 var demo3 = $('.demo3').stress({
 	total: 3
@@ -260,12 +289,16 @@ demo3.update('title-on-now', 'Yay');
 					<div class="divider"></div>					
 					
 					<h4>Full Configuration 3</h4>
-					<div class="demo4" data-now="3" data-status="fail" data-title-on-now="Bad"></div>
+					<div class="demo4" data-init-stress="3" data-now="3" data-status="fail" data-title-on-now="Bad"></div>
 					<a class="demo-link" href="#demo4-code" data-toggle="collapse">Show/Hide Code</a>
 					<div id="demo4-code" class="collapse code">
-						<pre>&lt;div class="demo3" data-now="2" data-status="complete" data-title-on-now="Yay"&gt;&lt;/div&gt;
+						<pre>&lt;div class="demo4" data-init-stress="3" data-now="3" data-status="fail" data-title-on-now="Bad"&gt;&lt;/div&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;div class="demo4" data-now="3" data-status="fail" data-title-on-now="Bad"&gt;&lt;/div&gt;
 &lt;script&gt;
-$('.demo3').stress({
+$('.demo4').stress({
 	total: 3
 });
 &lt;/script&gt;</pre>
@@ -274,7 +307,7 @@ $('.demo3').stress({
 					<div class="divider"></div>					
 					
 					<h4>Interactive</h4>
-					<div class="demo5" data-now="1" data-status="complete"></div>
+					<div class="demo5" data-init-stress="8" data-now="1" data-status="complete" data-title-on-now="I'm<br>HTML"></div>
 					<br>
 					<div class="text-center">
 						<button id="prev" class="btn btn-primary">Prev Step</button>
@@ -284,7 +317,29 @@ $('.demo3').stress({
 					<br><br>
 					<a class="demo-link" href="#demo5-code" data-toggle="collapse">Show/Hide Code</a>
 					<div id="demo5-code" class="collapse code">
-						<pre>&lt;div class="demo5" data-now="1" data-status="complete"&gt;&lt;/div&gt;
+						<pre>&lt;div class="demo5" data-init-stress="8" data-now="1" data-status="complete" data-title-on-now="I'm&lt;br&gt;HTML"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class="text-center"&gt;
+	&lt;button id="prev" class="btn btn-primary"&gt;Prev Step&lt;/button&gt;
+	&lt;button id="next" class="btn btn-primary"&gt;Next Step&lt;/button&gt;
+	&lt;button id="change-status" class="btn btn-warning"&gt;Change Status&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+$('#next').click(function() {
+	$('.demo5').stress().update('now', parseInt($('.demo5').attr('data-now'))+1);
+});
+$('#prev').click(function() {
+	$('.demo5').stress().update('now', parseInt($('.demo5').attr('data-now'))-1);
+});
+var arr = ['active', 'complete', 'fail'];
+$('#change-status').click(function() {
+	$('.demo5').stress().update('status', arr[Math.floor(Math.random() * arr.length)]);
+});
+&lt;/script&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;div class="demo5" data-now="1" data-status="complete" data-title-on-now="I'm&lt;br&gt;HTML"&gt;&lt;/div&gt;
 &lt;br&gt;
 &lt;div class="text-center"&gt;
 	&lt;button id="prev" class="btn btn-primary"&gt;Prev Step&lt;/button&gt;
@@ -311,7 +366,7 @@ $('#change-status').click(function() {
 					<div class="divider"></div>					
 					
 					<h4>Add/Delete Title</h4>
-					<div class="demo6" data-now="4" data-status="fail" data-title-on-now="Hah"></div>
+					<div class="demo6" data-init-stress="5" data-now="4" data-status="fail" data-title-on-now="Hah"></div>
 					<br>
 					<div class="text-center">
 						<button id="add-title" class="btn btn-primary">Add Title to Step 2</button>
@@ -320,7 +375,24 @@ $('#change-status').click(function() {
 					<br><br>
 					<a class="demo-link" href="#demo6-code" data-toggle="collapse">Show/Hide Code</a>
 					<div id="demo6-code" class="collapse code">
-						<pre>&lt;div class="demo6" data-now="4" data-status="fail" data-title-on-now="Hah"&gt;&lt;/div&gt;
+						<pre>&lt;div class="demo6" data-init-stress="5" data-now="4" data-status="fail" data-title-on-now="Hah"&gt;&lt;/div&gt;
+&lt;br&gt;
+&lt;div class="text-center"&gt;
+	&lt;button id="add-title" class="btn btn-primary"&gt;Add Title to Step 2&lt;/button&gt;
+	&lt;button id="delete-title" class="btn btn-primary"&gt;Delete Title at Step 2&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;
+$('#add-title').click(function() {
+	$('.demo6').stress().Title(2, "Hello World!");
+});
+$('#delete-title').click(function() {
+	$('.demo6').stress().deleteTitle(2);
+});
+&lt;/script&gt;
+
+&lt;!-- OR --&gt;
+
+&lt;div class="demo6" data-now="4" data-status="fail" data-title-on-now="Hah"&gt;&lt;/div&gt;
 &lt;br&gt;
 &lt;div class="text-center"&gt;
 	&lt;button id="add-title" class="btn btn-primary"&gt;Add Title to Step 2&lt;/button&gt;
@@ -352,47 +424,28 @@ $('#delete-title').click(function() {
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<script src="stress.min.js"></script>
+	<script src="stress.js"></script>
 	<script>
-	$('.demo1').stress();
-	
-	$('.demo2').stress({
-		total: 5
-	});
-	
-	var demo3 = $('.demo3').stress({
-		total: 3
-	});
-	demo3.update('now', 2);
-	demo3.update('status', 'complete');
-	demo3.update('title-on-now', 'Yay');
+	$('.demo3').stress().update('now', 2);
+	$('.demo3').stress().update('status', 'complete');
+	$('.demo3').stress().update('title-on-now', 'Yay');
 
-	$('.demo4').stress({
-		total: 3
-	});
-
-	var demo5 = $('.demo5').stress({
-		total: 8
-	});
 	$('#next').click(function() {
-		demo5.update('now', parseInt($('.demo5').attr('data-now'))+1);
+		$('.demo5').stress().update('now', parseInt($('.demo5').attr('data-now'))+1);
 	});
 	$('#prev').click(function() {
-		demo5.update('now', parseInt($('.demo5').attr('data-now'))-1);
+		$('.demo5').stress().update('now', parseInt($('.demo5').attr('data-now'))-1);
 	});
 	var arr = ['active', 'complete', 'fail'];
 	$('#change-status').click(function() {
-		demo5.update('status', arr[Math.floor(Math.random() * arr.length)]);
+		$('.demo5').stress().update('status', arr[Math.floor(Math.random() * arr.length)]);
 	});
 
-	var demo6 = $('.demo6').stress({
-		total: 5
-	});
 	$('#add-title').click(function() {
-		demo6.Title(2, "Hello World!");
+		$('.demo6').stress().Title(2, "Hello World!");
 	});
 	$('#delete-title').click(function() {
-		demo6.deleteTitle(2);
+		$('.demo6').stress().deleteTitle(2);
 	});
 	</script>
 </body>
