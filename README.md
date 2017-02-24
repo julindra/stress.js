@@ -11,7 +11,7 @@ Step Progress Made Easy
 * Bootstrap
 
 ## Demos & Documentation
-Go to [https://julindra.github.io/stress.js/](https://julindra.github.io/stress.js/)
+Go to [https://stress.js.org/](https://stress.js.org/)
 
 ## License
 ````
